@@ -1,21 +1,12 @@
 import React from 'react';
-import hero1 from '../src/assets/hero1.png'; // Adjust the path as necessary
-import logo from '../src/assets/logo.png'; // Adjust the path as necessary
+import Navbar from '../Navbars/Navbar';
+import hero1 from '../assets/hero1.png'; // Adjust the path as necessary
+import logo from '../assets/logo.png'; // Adjust the path as necessary
 
 const Explore = () => {
   return (
     <div className="bg-gray-50 min-h-screen font-poppins">
-      <header className="flex justify-between items-center p-4 bg-white shadow-md">
-        <img src={logo} alt="Craftify Logo" className="h-12" />
-        <nav className="space-x-4">
-          <a href="/" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">Home</a>
-          <a href="/Explore" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">Explore</a>
-          <a href="/AboutUs" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">About Us</a>
-          <a href="/HowItWorks" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">How It Works</a>
-          <a href="/signup" className="py-2 px-4 bg-[#5C0601] text-white font-semibold rounded-md shadow-sm hover:bg-[#7A1F0A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Sign Up</a>
-          <a href="/login" className="py-2 px-4 border border-[#5C0601] text-[#5C0601] font-semibold rounded-md shadow-sm hover:bg-[#FBD3A7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Login</a>
-        </nav>
-      </header>
+      <Navbar />
       <div className="container mx-auto text-center py-20">
         {/* Heading */}
         <h1 className="text-3xl md:text-4xl font-bold mb-12">

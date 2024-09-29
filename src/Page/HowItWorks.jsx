@@ -1,28 +1,20 @@
 import React from 'react';
 import { FaUserPlus, FaSearch, FaClipboardCheck, FaProjectDiagram, FaUsers, FaChartLine } from 'react-icons/fa';
-import logo from '../src/assets/logo.png'; // Adjust the path as necessary
-import step1Image from '../src/assets/step1.png'; // Example image paths
-import step2Image from '../src/assets/step2.png';
-import step3Image from '../src/assets/step3.png';
-import step4Image from '../src/assets/step4.png';
-import step5Image from '../src/assets/step5.png';
-import step6Image from '../src/assets/step6.png';
+import logo from '../assets/logo.png'; // Adjust the path as necessary
+import step1Image from '../assets/step1.png'; // Example image paths
+import step2Image from '../assets/step2.png';
+import step3Image from '../assets/step3.png';
+import step4Image from '../assets/step4.png';
+import step5Image from '../assets/step5.png';
+import step6Image from '../assets/step6.png';
+import Navbar from '../Navbars/Navbar';
 
 const HowItWorks = () => {
   return (
+    <div className="bg-gray-50 min-h-screen font-poppins">
+    <Navbar />
     <div className="min-h-screen bg-gray-100 font-poppins flex flex-col items-center">
-      {/* Header Section */}
-      <header className="flex justify-between items-center p-4 bg-white shadow-md w-full">
-        <img src={logo} alt="Craftify Logo" className="h-12" />
-        <nav className="space-x-4">
-          <a href="/" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Home</a>
-          <a href="/Explore" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Explore</a>
-          <a href="/AboutUs" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">About Us</a>
-          <a href="/HowItWorks" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">How It Works</a>
-          <a href="/signup" className="py-2 px-4 bg-[#5C0601] text-white font-semibold rounded-md shadow-sm hover:bg-[#7A1F0A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Sign Up</a>
-          <a href="/login" className="py-2 px-4 border border-[#5C0601] text-[#5C0601] font-semibold rounded-md shadow-sm hover:bg-[#FBD3A7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Login</a>
-        </nav>
-      </header>
+     
       
       {/* Header Title */}
       <h1 className="text-4xl font-bold text-orange-600 text-center mb-8 p-6">HOW IT WORKS</h1>
@@ -165,6 +157,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </footer>
+    </div>
     </div>
   );
 };

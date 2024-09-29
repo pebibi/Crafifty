@@ -1,21 +1,11 @@
 import React from "react";
-import Navbar from './Navbar'; 
-import logo from '../src/assets/logo.png'; 
+import Navbar from '../Navbars/Navbar';
+import logo from '../assets/logo.png'; 
 
 const AboutUs = () => {
   return (
     <div className="bg-gray-50 min-h-screen font-poppins">
-     <header className="flex justify-between items-center p-4 bg-white shadow-md">
-        <img src={logo} alt="Craftify Logo" className="h-12" />
-        <nav className="space-x-4">
-          <a href="/" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">Home</a>
-          <a href="/Explore" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">Explore</a>
-          <a href="/AboutUs" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">About Us</a>
-          <a href="/HowItWorks" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">How It Works</a>
-          <a href="/signup" className="py-2 px-4 bg-[#5C0601] text-white font-semibold rounded-md shadow-sm hover:bg-[#7A1F0A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Sign Up</a>
-          <a href="/login" className="py-2 px-4 border border-[#5C0601] text-[#5C0601] font-semibold rounded-md shadow-sm hover:bg-[#FBD3A7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Login</a>
-        </nav>
-      </header>
+     <Navbar />
 
       {/* Hero Section */}
       <section className="bg-[#FBD3A7] text-[#5C0601] py-20">

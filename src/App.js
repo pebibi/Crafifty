@@ -1,17 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Homepage from './Homepage';
-import AboutUs from './AboutUs';
-import Explore from './Explore';
-import HowItWorks from './HowItWorks';
+import Homepage from './Page/Homepage';
+import AboutUs from './Page/AboutUs';
+import Explore from './Page/Explore';
+import HowItWorks from './Page/HowItWorks';
 import DashboardArtist from './DashboardArtist';
 import Community from './Community';
+import SignUpPage from './Page/SignUpPage';
+import ProfileSetupPage from './Page/ProfileSetupPage';
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
+        <Route path="/SignUpPage" element={<SignUpPage />} />
+        <Route path="/ProfileSetupPage" element={<ProfileSetupPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/Explore" element={<Explore />} />
         <Route path="/HowItWorks" element={<HowItWorks />} />

@@ -1,32 +1,22 @@
 import React from 'react';
-import logo from '../src/assets/logo.png'; // Adjust the path as necessary
-import heroImage1 from '../src/assets/hero1.png'; // Adjust the path as necessary
-import heroImage2 from '../src/assets/hero2.png'; // Adjust the path as necessary
-import heroImage3 from '../src/assets/hero3.png'; // Adjust the path as necessary
-import portrait from '../src/assets/MATCH.png'; // Adjust the path as necessary
-import heroImage4 from '../src/assets/hero4.png'; // Adjust the path as necessary
-import heroImage5 from '../src/assets/hero5.png'; // Adjust the path as necessary
-import heroImage6 from '../src/assets/hero6.png'; // Adjust the path as necessary
-import heroImage7 from '../src/assets/hero7.png'; // Adjust the path as necessary
-import heroImage8 from '../src/assets/hero8.png'; // Adjust the path as necessary
-import heroImage9 from '../src/assets/hero9.png'; // Adjust the path as necessary
-import heroImage10 from '../src/assets/hero10.png'; // Adjust the path as necessary
+import logo from '../assets/logo.png'; // Adjust the path as necessary
+import heroImage1 from '../assets/hero1.png'; // Adjust the path as necessary
+import heroImage2 from '../assets/hero2.png'; // Adjust the path as necessary
+import heroImage3 from '../assets/hero3.png'; // Adjust the path as necessary
+import portrait from '../assets/MATCH.png'; // Adjust the path as necessary
+import heroImage4 from '../assets/hero4.png'; // Adjust the path as necessary
+import heroImage5 from '../assets/hero5.png'; // Adjust the path as necessary
+import heroImage6 from '../assets/hero6.png'; // Adjust the path as necessary
+import heroImage7 from '../assets/hero7.png'; // Adjust the path as necessary
+import heroImage8 from '../assets/hero8.png'; // Adjust the path as necessary
+import heroImage9 from '../assets/hero9.png'; // Adjust the path as necessary
+import heroImage10 from '../assets/hero10.png'; // Adjust the path as necessary
+import Navbar from '../Navbars/Navbar';
 
 const Homepage = () => {
   return (
     <div className="min-h-screen bg-gray-100 font-poppins">
-      {/* Header Section */}
-      <header className="flex justify-between items-center p-4 bg-white shadow-md">
-        <img src={logo} alt="Craftify Logo" className="h-12" />
-        <nav className="space-x-4">
-          <a href="/" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">Home</a>
-          <a href="/Explore" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">Explore</a>
-          <a href="/AboutUs" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">About Us</a>
-          <a href="/HowItWorks" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold ">How It Works</a>
-          <a href="/signup" className="py-2 px-4 bg-[#5C0601] text-white font-semibold rounded-md shadow-sm hover:bg-[#7A1F0A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Sign Up</a>
-          <a href="/login" className="py-2 px-4 border border-[#5C0601] text-[#5C0601] font-semibold rounded-md shadow-sm hover:bg-[#FBD3A7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Login</a>
-        </nav>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="text-center py-16 bg-[#FBD3A7]">
