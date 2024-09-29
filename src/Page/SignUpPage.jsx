@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'; // Adjust the path as necessary
 import sideImage from '../assets/first.png'; // Adjust the path as necessary
 import { FaGoogle } from 'react-icons/fa';
 
 const SignUpPage = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -41,8 +43,8 @@ const SignUpPage = () => {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      // Handle sign-up logic here
-      console.log('Form submitted', formData);
+      // Navigate to ProfileSetupPage with form data
+      navigate('/ProfileSetupPage', { state: { formData } });
     }
   };
 

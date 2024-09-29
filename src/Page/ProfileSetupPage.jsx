@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png'; // Adjust the path as necessary
 import sideImage from '../assets/first.png'; // Adjust the path as necessary
 
 const ProfileSetupPage = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
@@ -13,6 +15,16 @@ const ProfileSetupPage = () => {
     birthdate: '',
   });
   const [errors, setErrors] = useState({});
+  const [profileImage, setProfileImage] = useState(null);
+
+  useEffect(() => {
+    if (location.state && location.state.formData) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        email: location.state.formData.email,
+      }));
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,8 +35,14 @@ const ProfileSetupPage = () => {
   };
 
   const handlePhotoUpload = (e) => {
-    // Handle photo upload logic here
-    console.log('Photo uploaded');
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProfileImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleNext = (e) => {
@@ -37,14 +55,20 @@ const ProfileSetupPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 font-poppins">
       {/* Header Section */}
       <div className="text-center mt-8">
-        <h1 className="text-3xl font-bold text-orange-600">Hi Artist Name! Let’s Complete your profile</h1>
+        <h1 className="text-3xl font-bold text-orange-600">
+          Hi {location.state?.formData?.firstName || 'Artist'}! Let’s Complete your profile
+        </h1>
       </div>
 
       {/* Profile Picture Placeholder */}
       <div className="flex justify-center mt-8">
         <div className="relative">
-          <div className="w-32 h-32 rounded-full border-2 border-orange-600 flex items-center justify-center">
-            <span className="text-orange-600">+ Add Photo</span>
+          <div className="w-32 h-32 rounded-full border-2 border-orange-600 flex items-center justify-center overflow-hidden">
+            {profileImage ? (
+              <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+            ) : (
+              <span className="text-orange-600">+ Add Photo</span>
+            )}
           </div>
           <input
             type="file"
@@ -66,6 +90,7 @@ const ProfileSetupPage = () => {
               name="email"
               placeholder="user@gmail.com"
               required
+              readOnly
               className="mt-1 block w-full px-3 py-2 border border-orange-600 rounded-md shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
               value={formData.email}
               onChange={handleChange}
@@ -90,7 +115,7 @@ const ProfileSetupPage = () => {
               type="number"
               id="age"
               name="age"
-              placeholder="22"
+              placeholder="Age"
               required
               className="mt-1 block w-full px-3 py-2 border border-orange-600 rounded-md shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
               value={formData.age}
@@ -128,7 +153,7 @@ const ProfileSetupPage = () => {
               type="text"
               id="address"
               name="address"
-              placeholder="Toril, Davao City"
+              placeholder="Address"
               required
               className="mt-1 block w-full px-3 py-2 border border-orange-600 rounded-md shadow-sm focus:outline-none focus:ring-orange-600 focus:border-orange-600 sm:text-sm"
               value={formData.address}
@@ -167,10 +192,10 @@ const ProfileSetupPage = () => {
       {/* Progress Indicator */}
       <div className="flex justify-center mt-8">
         <div className="flex space-x-2">
-          <div className="w-8 h-2 bg-orange-600"></div>
-          <div className="w-8 h-2 bg-gray-300"></div>
-          <div className="w-8 h-2 bg-gray-300"></div>
-          <div className="w-8 h-2 bg-gray-300"></div>
+          <div className="w-8 h-2 bg-orange-600 rounded"></div>
+          <div className="w-8 h-2 bg-gray-300 rounded"></div>
+          <div className="w-8 h-2 bg-gray-300 rounded"></div>
+          <div className="w-8 h-2 bg-gray-300 rounded"></div>
         </div>
       </div>
 
@@ -178,7 +203,7 @@ const ProfileSetupPage = () => {
       <div className="flex justify-center mt-8">
         <button
           type="submit"
-          className="w-1/2 py-2 px-4 bg-red-600 text-white font-semibold rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
+          className="py-2 px-4 bg-red-600 text-white font-semibold rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-600"
           onClick={handleNext}
         >
           NEXT
