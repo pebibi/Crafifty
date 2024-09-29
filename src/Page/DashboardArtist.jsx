@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaHeart, FaEnvelope, FaUser, FaSearch, FaFilter, FaBell, FaEllipsisH, FaTimes } from 'react-icons/fa';
-import logo from '../src/assets/logo.png'; // Adjust the path as necessary
-import ca1 from '../src/assets/ca-1.png'; // Example image paths
+import logo from '../assets/logo.png'; // Adjust the path as necessary
+import ca1 from '../assets/ca-1.png'; // Example image paths
 
 const DashboardArtist = () => {
   const [showNotifications, setShowNotifications] = useState(false);

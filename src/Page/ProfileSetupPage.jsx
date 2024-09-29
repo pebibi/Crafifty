@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'; // Adjust the path as necessary
 import sideImage from '../assets/first.png'; // Adjust the path as necessary
 
 const ProfileSetupPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
@@ -47,8 +48,8 @@ const ProfileSetupPage = () => {
 
   const handleNext = (e) => {
     e.preventDefault();
-    // Handle next step logic here
-    console.log('Next step', formData);
+    // Navigate to the next setup page
+    navigate('/ProfileSetupPage2', { state: { formData } });
   };
 
   return (
@@ -192,7 +193,7 @@ const ProfileSetupPage = () => {
       {/* Progress Indicator */}
       <div className="flex justify-center mt-8">
         <div className="flex space-x-2">
-          <div className="w-8 h-2 bg-orange-600 rounded"></div>
+          <div className="w-8 h-2 bg-orange-300 rounded"></div>
           <div className="w-8 h-2 bg-gray-300 rounded"></div>
           <div className="w-8 h-2 bg-gray-300 rounded"></div>
           <div className="w-8 h-2 bg-gray-300 rounded"></div>
