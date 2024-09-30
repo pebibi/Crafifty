@@ -12,6 +12,7 @@ import ProfileSetupPage2 from './Page/Artist/ProfileSetupPage2';
 import ProfileSetupPage3 from './Page/Artist/ProfileSetupPage3';
 import ProfileSetupPage4 from './Page/Artist/ProfileSetupPage4';
 import ProfileSetupPage5 from './Page/Artist/ProfileSetupPage5';
+import ProfileSetupClientPage from './Page/Client/ProfileSetupClientPage';
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
         <Route path="/profile-setup-page-3" element={<ProfileSetupPage3 />} />
         <Route path="/profile-setup-page-4" element={<ProfileSetupPage4 />} />
         <Route path="/profile-setup-page-5" element={<ProfileSetupPage5 />} />
+        <Route path="/sign-up-client" element={<SignUpPageClient />} />
+        <Route path="/profile-setup-client-page-1" element={<ProfileSetupClientPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/how-it-works" element={<HowItWorks />} />

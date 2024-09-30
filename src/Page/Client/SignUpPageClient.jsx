@@ -44,7 +44,7 @@ const SignUpPageClient = () => {
     } else {
       setErrors({});
       // Navigate to ProfileSetupPage with form data
-      navigate('/profile-setup-page-1', { state: { formData } });
+      navigate('/profile-setup-client-page-1', { state: { formData } });
     }
   };
 
