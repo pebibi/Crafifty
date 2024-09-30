@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaHeart, FaEnvelope, FaUser, FaSearch, FaFilter, FaBell, FaEllipsisH, FaTimes } from 'react-icons/fa';
-import logo from '../assets/logo.png'; // Adjust the path as necessary
-import ca1 from '../assets/ca-1.png'; // Example image paths
+import NavbarArtist from '../../Navbars/NavbarArtist';
+import { FaSearch, FaFilter, FaTimes } from 'react-icons/fa';
+import ca1 from '../../assets/ca-1.png'; // Example image paths
 
 const DashboardArtist = () => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -58,42 +58,6 @@ const DashboardArtist = () => {
     setActiveChat(chat);
   };
 
-  const ChatInterface = ({ onClose }) => {
-    return (
-      <div className="absolute right-0 top-16 w-80 bg-[#FBD3A7] text-black border rounded-lg shadow-lg p-4">
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold">Messages</h3>
-          <div className="flex space-x-2">
-            <FaEllipsisH className="cursor-pointer" />
-          </div>
-        </div>
-        <div className="relative mb-4">
-          <input type="text" placeholder="Search Messages" className="w-full px-4 py-2 bg-white-700 text-black rounded-md focus:outline-none" />
-          <FaSearch className="absolute top-2 right-3 text-gray-400" />
-        </div>
-        <div className="flex space-x-4 mb-4">
-          <button className="flex-1 bg-[#5C0601] text-white py-2 rounded-md">Inbox</button>
-          <button className="flex-1 bg-white text-black py-2 rounded-md">Communities</button>
-        </div>
-        <div className="overflow-y-auto h-64">
-          {messages.map((message, index) => (
-            <div key={index} className="flex items-center mb-4 cursor-pointer" onClick={() => onMessageClick({
-              sender: message.sender, content: message.content, profilePic: ca1, status: "Active 12m ago", messages: [
-                { text: message.content, timestamp: "6m", isUser: true }
-              ]})}>
-              <img src={ca1} alt="Profile" className="w-10 h-10 rounded-full mr-4" />
-              <div>
-                <h4 className="font-semibold">{message.sender}</h4>
-                <p className="text-black text-sm">{message.content}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <button className="w-full text-[#5C0601] mt-4">See all in Messages</button>
-      </div>
-    );
-  };
-
   const ChatInterface1 = ({ chat, onClose }) => {
     return (
       <div className="fixed right-8 bottom-0 mb-2 w-80 h-120 bg-white text-black border border-gray-300 rounded-lg shadow-lg p-4">
@@ -129,46 +93,17 @@ const DashboardArtist = () => {
   return (
     <div className="bg-gray-50 min-h-screen font-poppins">
       {/* Navigation Bar */}
-      <header className="flex justify-between items-center p-4 bg-white shadow-md">
-        <img src={logo} alt="Craftify Logo" className="h-12" />
-        <nav className="space-x-4">
-          <a href="/DashboardArtist" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Home</a>
-          <a href="/track-project" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Track Project</a>
-          <a href="/community" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Community</a>
-          <a href="/opportunity" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Opportunity</a>
-        </nav>
-        <div className="flex space-x-4 relative">
-          <FaHeart className="text-[#5C0601] hover:text-gray-900" />
-          <div className="relative">
-            <FaEnvelope className="text-[#5C0601] hover:text-gray-900 cursor-pointer" onClick={toggleChat} />
-            {showChat && !activeChat && <ChatInterface onClose={() => setShowChat(false)} />}
-          </div>
-          <div className="relative">
-            <FaBell className="text-[#5C0601] hover:text-gray-900 cursor-pointer" onClick={toggleNotifications} />
-            {showNotifications && (
-              <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-300 rounded-lg shadow-lg p-4">
-                <h3 className="text-lg font-semibold mb-2">Notifications</h3>
-                <ul>
-                  {notifications.length === 0 ? (
-                    <li>No notifications</li>
-                  ) : (
-                    notifications.map((notification, index) => (
-                      <li 
-                        key={index} 
-                        className={`mb-2 ${notification.read ? 'text-gray-500' : 'text-black'}`}
-                        onClick={() => markAsRead(index)}
-                      >
-                        {notification.message}
-                      </li>
-                    ))
-                  )}
-                </ul>
-              </div>
-            )}
-          </div>
-          <FaUser className="text-[#5C0601] hover:text-gray-900" />
-        </div>
-      </header>
+      <NavbarArtist 
+        toggleChat={toggleChat} 
+        showChat={showChat} 
+        activeChat={activeChat} 
+        setShowChat={setShowChat} 
+        toggleNotifications={toggleNotifications} 
+        showNotifications={showNotifications} 
+        notifications={notifications} 
+        markAsRead={markAsRead} 
+        onMessageClick={onMessageClick} // Pass the onMessageClick function
+      />
 
       {/* Search Bar */}
       <div className="flex justify-center items-center p-4 mt-4">

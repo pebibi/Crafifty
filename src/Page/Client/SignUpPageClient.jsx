@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'; // Adjust the path as necessary
 import sideImage from '../assets/first.png'; // Adjust the path as necessary
 import { FaGoogle } from 'react-icons/fa';
 
-const SignUpPage = () => {
+const SignUpPageClient = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ const SignUpPage = () => {
     } else {
       setErrors({});
       // Navigate to ProfileSetupPage with form data
-      navigate('/ProfileSetupPage', { state: { formData } });
+      navigate('/profile-setup-page-1', { state: { formData } });
     }
   };
 
@@ -163,4 +163,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignUpPageClient;

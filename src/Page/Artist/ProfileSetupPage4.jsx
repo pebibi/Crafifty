@@ -15,7 +15,7 @@ const ProfileSetupPage4 = () => {
     // Handle save logic here
     console.log('Sample works saved', sampleWorks);
     // Navigate to the next step or dashboard
-    navigate('/DashboardArtist');
+    navigate('/profile-setup-page-5');
   };
 
   return (

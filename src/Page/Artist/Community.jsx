@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FaHeart, FaEnvelope, FaUser, FaSearch, FaFilter, FaComment, FaBell, FaTrash, FaEdit, FaCheck, FaEllipsisH, FaTimes } from 'react-icons/fa';
-import logo from '../src/assets/logo.png'; // Adjust the path as necessary
-import userProfilePic from '../src/assets/ca-1.png'; // Example user profile picture
+import logo from '../../assets/logo.png'; // Adjust the path as necessary
+import userProfilePic from '../../assets/ca-1.png'; // Example user profile picture
+import NavbarArtist from '../../Navbars/NavbarArtist'; // Adjust the path as necessary
 
 const Community = () => {
   const [posts, setPosts] = useState([]);
@@ -175,47 +176,18 @@ const Community = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen font-poppins">
-       {/* Navigation Bar */}
-       <header className="flex justify-between items-center p-4 bg-white shadow-md">
-        <img src={logo} alt="Craftify Logo" className="h-12" />
-        <nav className="space-x-4">
-          <a href="/DashboardArtist" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Home</a>
-          <a href="/track-project" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Track Project</a>
-          <a href="/community" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Community</a>
-          <a href="/opportunity" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Opportunity</a>
-        </nav>
-        <div className="flex space-x-4 relative">
-          <FaHeart className="text-[#5C0601] hover:text-gray-900" />
-          <div className="relative">
-            <FaEnvelope className="text-[#5C0601] hover:text-gray-900 cursor-pointer" onClick={toggleChat} />
-            {showChat && !activeChat && <ChatInterface onClose={() => setShowChat(false)} />}
-          </div>
-          <div className="relative">
-            <FaBell className="text-[#5C0601] hover:text-gray-900 cursor-pointer" onClick={toggleNotifications} />
-            {showNotifications && (
-              <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-300 rounded-lg shadow-lg p-4">
-                <h3 className="text-lg font-semibold mb-2">Notifications</h3>
-                <ul>
-                  {notifications.length === 0 ? (
-                    <li>No notifications</li>
-                  ) : (
-                    notifications.map((notification, index) => (
-                      <li 
-                        key={index} 
-                        className={`mb-2 ${notification.read ? 'text-gray-500' : 'text-black'}`}
-                        onClick={() => markAsRead(index)}
-                      >
-                        {notification.message}
-                      </li>
-                    ))
-                  )}
-                </ul>
-              </div>
-            )}
-          </div>
-          <FaUser className="text-[#5C0601] hover:text-gray-900" />
-        </div>
-      </header>
+      {/* Navigation Bar */}
+      <NavbarArtist 
+        toggleChat={toggleChat} 
+        showChat={showChat} 
+        activeChat={activeChat} 
+        setShowChat={setShowChat} 
+        toggleNotifications={toggleNotifications} 
+        showNotifications={showNotifications} 
+        notifications={notifications} 
+        markAsRead={markAsRead} 
+        onMessageClick={onMessageClick} 
+      />
 
       {/* Header Section */}
       <div className="container mx-auto py-8">

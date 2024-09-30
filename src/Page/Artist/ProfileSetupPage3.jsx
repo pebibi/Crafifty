@@ -22,7 +22,7 @@ const ProfileSetupPage3 = () => {
     e.preventDefault();
     // Handle next step logic here
     console.log('Next step', formData);
-    navigate('/ProfileSetupPage4', { state: { formData } });
+    navigate('/profile-setup-page-4', { state: { formData } });
   };
 
   return (

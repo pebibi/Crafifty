@@ -4,29 +4,31 @@ import Homepage from './Page/Homepage';
 import AboutUs from './Page/AboutUs';
 import Explore from './Page/Explore';
 import HowItWorks from './Page/HowItWorks';
-import DashboardArtist from './Page/DashboardArtist';
-import Community from './Community';
-import SignUpPage from './Page/SignUpPage';
-import ProfileSetupPage from './Page/ProfileSetupPage';
-import ProfileSetupPage2 from './Page/ProfileSetupPage2';
-import ProfileSetupPage3 from './Page/ProfileSetupPage3';
-import ProfileSetupPage4 from './Page/ProfileSetupPage4';
+import DashboardArtist from './Page/Artist/DashboardArtist';
+import Community from './Page/Artist/Community';
+import SignUpPage from './Page/Artist/SignUpPage';
+import ProfileSetupPage from './Page/Artist/ProfileSetupPage';
+import ProfileSetupPage2 from './Page/Artist/ProfileSetupPage2';
+import ProfileSetupPage3 from './Page/Artist/ProfileSetupPage3';
+import ProfileSetupPage4 from './Page/Artist/ProfileSetupPage4';
+import ProfileSetupPage5 from './Page/Artist/ProfileSetupPage5';
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
-        <Route path="/SignUpPage" element={<SignUpPage />} />
-        <Route path="/ProfileSetupPage" element={<ProfileSetupPage />} />
-        <Route path="/ProfileSetupPage2" element={<ProfileSetupPage2 />} />
-        <Route path="/ProfileSetupPage3" element={<ProfileSetupPage3 />} />
-        <Route path="/ProfileSetupPage4" element={<ProfileSetupPage4 />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/Explore" element={<Explore />} />
-        <Route path="/HowItWorks" element={<HowItWorks />} />
-        <Route path="/DashboardArtist" element={<DashboardArtist />} />
-        <Route path="/Community" element={<Community />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+        <Route path="/profile-setup-page-1" element={<ProfileSetupPage />} />
+        <Route path="/profile-setup-page-2" element={<ProfileSetupPage2 />} />
+        <Route path="/profile-setup-page-3" element={<ProfileSetupPage3 />} />
+        <Route path="/profile-setup-page-4" element={<ProfileSetupPage4 />} />
+        <Route path="/profile-setup-page-5" element={<ProfileSetupPage5 />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/dashboard-artist" element={<DashboardArtist />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
     </Router>
   );

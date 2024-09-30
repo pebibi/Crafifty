@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const handleNextClick = () => {
     setShowModal(false);
-    navigate('/SignUpPage');
+    navigate('/sign-up');
   };
 
   return (
@@ -31,9 +31,9 @@ const Navbar = () => {
         <img src={logo} alt="Craftify Logo" className="h-12" />
         <nav className="space-x-4">
           <a href="/" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Home</a>
-          <a href="/Explore" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Explore</a>
-          <a href="/AboutUs" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">About Us</a>
-          <a href="/HowItWorks" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">How It Works</a>
+          <a href="/explore" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Explore</a>
+          <a href="/about-us" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">About Us</a>
+          <a href="/hot-it-works" className="text-[#5C0601] hover:text-gray-900 uppercase font-semibold">How It Works</a>
           <button onClick={handleSignUpClick} className="py-2 px-4 bg-[#5C0601] text-white font-semibold rounded-md shadow-sm hover:bg-[#7A1F0A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Sign Up</button>
           <a href="/login" className="py-2 px-4 border border-[#5C0601] text-[#5C0601] font-semibold rounded-md shadow-sm hover:bg-[#FBD3A7] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601] uppercase">Login</a>
         </nav>

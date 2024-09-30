@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Adjust the path as necessary
-import sideImage from '../assets/first.png'; // Adjust the path as necessary
+import logo from '../../assets/logo.png'; // Adjust the path as necessary
+import sideImage from '../../assets/first.png'; // Adjust the path as necessary
 
 const ProfileSetupPage = () => {
   const location = useLocation();
@@ -49,7 +49,7 @@ const ProfileSetupPage = () => {
   const handleNext = (e) => {
     e.preventDefault();
     // Navigate to the next setup page
-    navigate('/ProfileSetupPage2', { state: { formData } });
+    navigate('/profile-setup-page-2', { state: { formData } });
   };
 
   return (
