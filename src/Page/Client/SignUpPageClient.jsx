@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Adjust the path as necessary
-import sideImage from '../assets/first.png'; // Adjust the path as necessary
+import logo from '../../assets/logo.png'; // Adjust the path as necessary
+import sideImage from '../../assets/first.png'; // Adjust the path as necessary
 import { FaGoogle } from 'react-icons/fa';
 
 const SignUpPageClient = () => {

@@ -22,7 +22,11 @@ const Navbar = () => {
 
   const handleNextClick = () => {
     setShowModal(false);
-    navigate('/sign-up');
+    if (selectedRole === 'Service Provider') {
+      navigate('/sign-up');
+    } else if (selectedRole === 'Service Seeker') {
+      navigate('/sign-up-client');
+    }
   };
 
   return (

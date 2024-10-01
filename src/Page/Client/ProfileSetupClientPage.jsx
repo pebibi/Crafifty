@@ -49,7 +49,7 @@ const ProfileSetupClientPage = () => {
   const handleNext = (e) => {
     e.preventDefault();
     // Navigate to the next setup page
-    navigate('/profile-setup-page-2', { state: { formData } });
+    navigate('/profile-setup-client-page-2', { state: { formData } });
   };
 
   return (
@@ -194,7 +194,6 @@ const ProfileSetupClientPage = () => {
       <div className="flex justify-center mt-8">
         <div className="flex space-x-2">
           <div className="w-8 h-2 bg-orange-300 rounded"></div>
-          <div className="w-8 h-2 bg-gray-300 rounded"></div>
           <div className="w-8 h-2 bg-gray-300 rounded"></div>
           <div className="w-8 h-2 bg-gray-300 rounded"></div>
         </div>
