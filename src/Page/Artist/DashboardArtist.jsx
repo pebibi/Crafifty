@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavbarArtist from '../../Navbars/NavbarArtist';
 import { FaSearch, FaFilter, FaTimes } from 'react-icons/fa';
 import ca1 from '../../assets/ca-1.png'; // Example image paths
+import { useNavigate } from 'react-router-dom';
 
 const DashboardArtist = () => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -13,6 +14,8 @@ const DashboardArtist = () => {
   const [matchedForYou, setMatchedForYou] = useState([]);
   const [recommendedForYou, setRecommendedForYou] = useState([]);
   const [exploreMore, setExploreMore] = useState([]);
+
+  const navigate = useNavigate();
 
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
@@ -56,6 +59,10 @@ const DashboardArtist = () => {
 
   const onMessageClick = (chat) => {
     setActiveChat(chat);
+  };
+
+  const handleAddArtClick = () => {
+    navigate('/add-art'); // Adjust the path as necessary
   };
 
   const ChatInterface1 = ({ chat, onClose }) => {
@@ -115,6 +122,16 @@ const DashboardArtist = () => {
       </div>
 
       <div className="container mx-auto py-8">
+        {/* Add Art Button */}
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={handleAddArtClick}
+            className="py-2 px-4 bg-[#5C0601] text-white font-semibold rounded-md shadow-sm hover:bg-[#7A1F0A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#5C0601]"
+          >
+            Add Art
+          </button>
+        </div>
+
         {/* Section 1: Matched for you! */}
         <h2 className="text-2xl font-bold text-orange-600 mb-4">Matched for you!</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">

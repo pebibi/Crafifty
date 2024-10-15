@@ -23,6 +23,7 @@ const NavbarArtist = ({ toggleChat, showChat, activeChat, setShowChat, toggleNot
         <a href="/track-project" className="block md:inline-block text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Track Project</a>
         <a href="/community" className="block md:inline-block text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Community</a>
         <a href="/opportunity" className="block md:inline-block text-[#5C0601] hover:text-gray-900 uppercase font-semibold">Opportunity</a>
+        <a href="/my-art" className="block md:inline-block text-[#5C0601] hover:text-gray-900 uppercase font-semibold">My Art</a>
       </nav>
       <div className="flex space-x-4 relative mt-4 md:mt-0">
         <FaHeart className="text-[#5C0601] hover:text-gray-900" />

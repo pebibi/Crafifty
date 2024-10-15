@@ -12,6 +12,7 @@ import ProfileSetupPage2 from './Page/Artist/ProfileSetupPage2';
 import ProfileSetupPage3 from './Page/Artist/ProfileSetupPage3';
 import ProfileSetupPage4 from './Page/Artist/ProfileSetupPage4';
 import ProfileSetupPage5 from './Page/Artist/ProfileSetupPage5';
+import AddArt from './Page/Artist/AddArt';
 import ProfileSetupClientPage from './Page/Client/ProfileSetupClientPage';
 import SignUpPageClient from './Page/Client/SignUpPageClient';
 import ProfileSetupClientPage2 from './Page/Client/ProfileSetupClientPage2';
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/profile-setup-client-page-2" element={<ProfileSetupClientPage2 />} />
         <Route path="/profile-setup-client-page-3" element={<ProfileSetupClientPage3 />} />
         <Route path="/profile-setup-client-page-4" element={<ProfileSetupClientPage4 />} />
+        <Route path="/add-art" element={<AddArt />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
