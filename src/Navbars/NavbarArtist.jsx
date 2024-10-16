@@ -2,12 +2,25 @@ import React, { useState } from 'react';
 import { FaHeart, FaEnvelope, FaUser, FaBell, FaEllipsisH, FaTimes, FaSearch } from 'react-icons/fa';
 import logo from '../assets/logo.png'; // Adjust the path as necessary
 import ca1 from '../assets/ca-1.png'; // Example image paths
+import { useNavigate } from 'react-router-dom';
 
 const NavbarArtist = ({ toggleChat, showChat, activeChat, setShowChat, toggleNotifications, showNotifications, notifications, markAsRead, onMessageClick }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
+  const handleSignOut = () => {
+    // Handle sign out logic here
+    console.log('Sign Out');
+    navigate('/');
   };
 
   return (
@@ -86,7 +99,15 @@ const NavbarArtist = ({ toggleChat, showChat, activeChat, setShowChat, toggleNot
             </div>
           )}
         </div>
-        <FaUser className="text-[#5C0601] hover:text-gray-900" />
+        <div className="relative">
+          <FaUser className="text-[#5C0601] hover:text-gray-900 cursor-pointer" onClick={toggleProfileDropdown} />
+          {isProfileDropdownOpen && (
+            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+              <a href="/profile" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+              <button onClick={handleSignOut} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100">Sign Out</button>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

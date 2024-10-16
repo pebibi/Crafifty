@@ -18,31 +18,33 @@ import SignUpPageClient from './Page/Client/SignUpPageClient';
 import ProfileSetupClientPage2 from './Page/Client/ProfileSetupClientPage2';
 import ProfileSetupClientPage3 from './Page/Client/ProfileSetupClientPage3';
 import ProfileSetupClientPage4 from './Page/Client/ProfileSetupClientPage4';
+import Profile from './Page/Artist/Profile';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Homepage />} />
-        <Route path="/sign-up" element={<SignUpPage />} />
-        <Route path="/profile-setup-page-1" element={<ProfileSetupPage />} />
-        <Route path="/profile-setup-page-2" element={<ProfileSetupPage2 />} />
-        <Route path="/profile-setup-page-3" element={<ProfileSetupPage3 />} />
-        <Route path="/profile-setup-page-4" element={<ProfileSetupPage4 />} />
-        <Route path="/profile-setup-page-5" element={<ProfileSetupPage5 />} />
-        <Route path="/sign-up-client" element={<SignUpPageClient />} />
-        <Route path="/profile-setup-client-page-1" element={<ProfileSetupClientPage />} />
-        <Route path="/profile-setup-client-page-2" element={<ProfileSetupClientPage2 />} />
-        <Route path="/profile-setup-client-page-3" element={<ProfileSetupClientPage3 />} />
-        <Route path="/profile-setup-client-page-4" element={<ProfileSetupClientPage4 />} />
-        <Route path="/add-art" element={<AddArt />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/dashboard-artist" element={<DashboardArtist />} />
-        <Route path="/community" element={<Community />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/profile-setup-page-1" element={<ProfileSetupPage />} />
+          <Route path="/profile-setup-page-2" element={<ProfileSetupPage2 />} />
+          <Route path="/profile-setup-page-3" element={<ProfileSetupPage3 />} />
+          <Route path="/profile-setup-page-4" element={<ProfileSetupPage4 />} />
+          <Route path="/profile-setup-page-5" element={<ProfileSetupPage5 />} />
+          <Route path="/sign-up-client" element={<SignUpPageClient />} />
+          <Route path="/profile-setup-client-page-1" element={<ProfileSetupClientPage />} />
+          <Route path="/profile-setup-client-page-2" element={<ProfileSetupClientPage2 />} />
+          <Route path="/profile-setup-client-page-3" element={<ProfileSetupClientPage3 />} />
+          <Route path="/profile-setup-client-page-4" element={<ProfileSetupClientPage4 />} />
+          <Route path="/add-art" element={<AddArt />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/dashboard-artist" element={<DashboardArtist />} />
+          <Route path="/community" element={<Community />} />
+        </Routes>
+      </Router>
   );
 };
 
