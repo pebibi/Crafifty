@@ -19,6 +19,7 @@ import ProfileSetupClientPage2 from './Page/Client/ProfileSetupClientPage2';
 import ProfileSetupClientPage3 from './Page/Client/ProfileSetupClientPage3';
 import ProfileSetupClientPage4 from './Page/Client/ProfileSetupClientPage4';
 import Profile from './Page/Artist/Profile';
+import TrackProject from './Page/Artist/TrackProject';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/profile-setup-client-page-3" element={<ProfileSetupClientPage3 />} />
           <Route path="/profile-setup-client-page-4" element={<ProfileSetupClientPage4 />} />
           <Route path="/add-art" element={<AddArt />} />
+          <Route path="/track-project" element={<TrackProject />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/explore" element={<Explore />} />
